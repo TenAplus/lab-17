@@ -4,26 +4,9 @@
 #include<vector>
 using namespace std;
 
-______________ randomVector(unsigned int N){	
-    vector<int> v;
-    for(unsigned int i = 0; i < N; i++) v.______________(rand()%10);
-    ______________;
-}
-
-______________ showVector(______________){
-	cout << "[";
-	for(unsigned int i = 0; _____________________; i++){
-		cout << _________________;
-		if(_________________) cout << "]";
-		else cout << " ";
-	}
-}
-
-_________________ dotProduct(_____________________________){
-	int sum = 0;
-	for(unsigned int i = 0; _____________________; i++) sum += _________________;	
-	_________________;
-}
+vector<int> randomVector(unsigned int );
+void showVector(vector<int>);
+int dotProduct(vector<int>,vector<int>);
 
 int main(){
 	srand(time(0));
@@ -36,4 +19,25 @@ int main(){
 	cout << " = " << z;
 	
 	return 0;
+}
+
+vector<int>  randomVector(unsigned int N){	
+    vector<int> v;
+    for(unsigned int i = 0; i < N; i++) v.push_back(rand()%10);
+    return v;
+}
+
+void showVector(vector<int>x){
+	cout << "[";
+	for(unsigned int i = 0; i < x.size() ; i++){
+		cout << x[i];
+		if(i == x.size()-1) cout << "]";
+		else cout << " ";
+	}
+}
+
+int dotProduct(vector<int> A,vector<int> B){
+	int sum = 0;
+	for(unsigned int i = 0; i<A.size(); i++) sum += A[i]*B[i];	
+	return sum;
 }
